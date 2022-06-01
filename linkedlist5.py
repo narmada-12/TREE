@@ -35,9 +35,17 @@ class LL:
         temp.next=np
                
     def delete_begining(self):
-            self.head=temp 
+            temp=self.head
             self.head=temp.next
             temp.next=None
+    def delete_end(self):
+        temp=self.head.next
+        prev=self.head
+        while temp.next is not None:
+          temp=temp.next 
+          prev=prev.next
+        prev.next=None 
+        
     def display(self):
         if self.head is None:
             print("Linked List is empty")
@@ -60,5 +68,6 @@ LL1.insert_node(40)
 LL1.insert_end(50)
 LL1.insert_end(60)
 #LL1.insert_position(4,60)
-LL1.delete_begining()
+#LL1.delete_begining()
+LL1.delete_end()
 LL1.display()
